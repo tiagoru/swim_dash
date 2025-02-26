@@ -180,3 +180,10 @@ def compute_dtw(n_clicks, swimmer1, swimmer2, heat1, heat2):
 # Run Server
 if __name__ == '__main__':
     app.run_server(debug=True)
+from dash import Dash
+
+app = Dash(__name__)  # Create the Dash app
+server = app.server  # Expose the Flask server for Gunicorn
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
