@@ -178,23 +178,17 @@ def compute_dtw(n_clicks, swimmer1, swimmer2, heat1, heat2):
     return "Select valid swimmers and heats", go.Figure()
 
 # Run Server
-if __name__ == '__main__':
-    app.run_server(debug=True)
-from dash import Dash
-
-app = Dash(__name__)  # Create the Dash app
-server = app.server  # Expose the Flask server for Gunicorn
-
-from flask_cors import CORS  # Import CORS
-from dash import Dash
 import os
+from dash import Dash
+from flask_cors import CORS
 
 app = Dash(__name__)
-server = app.server  # Expose Flask server for Gunicorn
-CORS(server)  # Enable CORS to allow external requests
+server = app.server  # 🔹 Expose Flask server for Gunicorn
+CORS(server)  # 🔹 Enable CORS
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # Use Render's assigned port
+    port = int(os.environ.get("PORT", 10000))  # 🔹 Use Render's assigned port
     app.run_server(debug=True, host="0.0.0.0", port=port)
+
 
 
