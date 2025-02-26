@@ -185,5 +185,12 @@ from dash import Dash
 app = Dash(__name__)  # Create the Dash app
 server = app.server  # Expose the Flask server for Gunicorn
 
+import os
+from dash import Dash
+
+app = Dash(__name__)
+server = app.server  # Expose the Flask server for Gunicorn
+
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+
