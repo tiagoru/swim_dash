@@ -185,12 +185,16 @@ from dash import Dash
 app = Dash(__name__)  # Create the Dash app
 server = app.server  # Expose the Flask server for Gunicorn
 
-import os
+from flask_cors import CORS  # Import CORS
 from dash import Dash
+import os
 
 app = Dash(__name__)
-server = app.server  # Expose the Flask server for Gunicorn
+server = app.server  # Expose Flask server for Gunicorn
+CORS(server)  # Enable CORS to allow external requests
 
 if __name__ == "__main__":
-    app.run_server(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+    port = int(os.environ.get("PORT", 10000))  # Use Render's assigned port
+    app.run_server(debug=True, host="0.0.0.0", port=port)
+
 
