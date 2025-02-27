@@ -178,17 +178,13 @@ def compute_dtw(n_clicks, swimmer1, swimmer2, heat1, heat2):
     return "Select valid swimmers and heats", go.Figure()
 
 # Run Server
-import os
-from dash import Dash
 from flask_cors import CORS
 
-app = Dash(__name__)
 server = app.server  # 🔹 Expose Flask server for Gunicorn
 CORS(server)  # 🔹 Enable CORS
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # 🔹 Use Render's assigned port
-    app.run_server(debug=True, host="0.0.0.0", port=port)
+    app.run_server(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8050)))
 
 
 
