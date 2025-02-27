@@ -10,7 +10,7 @@ This **Dash-powered web application** analyzes **Olympic swimming split times**,
 - 🏅 **Compare total times per swimmer**
 - 🔄 **Use Dynamic Time Warping (DTW) to compare performance trends**
 
-🚀 **Live Demo:** [Your Render App URL](https://your-app-url.onrender.com)  
+🚀 **Live Demo:** https://swim-dash.onrender.com/  
 📊 **Built With:** `Dash`, `Plotly`, `Pandas`, `NumPy`, `Gunicorn`, `dtaidistance`
 
 ---
